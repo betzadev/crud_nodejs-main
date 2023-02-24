@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">  
+    <link rel="stylesheet" href="https://kit.fontawesome.com/43ebf4cfc4.css" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <title>CRUD</title>
+    <style>
+     *{
+      font-family: 'Lato', sans-serif;
+     }
+    </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">        
+<nav class="navbar navbar-primary">      
+  </nav>            
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-contprices="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a href="/" class="btn btn-outline-danger mt-2"><i class="fa-solid fa-house"></i></a>
+            
+          </li>                             
+        </ul>            
+      </div>
+    </div>
+  </nav>
+      <div class="container-md">    
+        <a href="/create" class="btn btn-outline-primary mt-4"><i class="fa-solid fa-plus"></i></a>    
+      <table class="table table-bordered table-striped text-center mt-4">
+        <thead>
+          <tr class="bg-dark text-white">
+            <th scope="col">ID</th>
+            <th scope="col">PRODUCTO</th>
+            <th scope="col">PRECIO</th>            
+            <th scope="col">ACCIONES</th>            
+          </tr>
+        </thead>
+        <tbody>
+          <% results.forEach((item)=>{ %>
+            <tr>  
+                <td><%= item.id %></td>  
+                <td><%= item.item %></td>
+                <td><%= item.price %></td>
+                <td>
+                  <a href="/edit/<%= item.id %>" class="btn btn-outline-info"><i class="fa-solid fa-pen-to-square"></i></a>
+                  <a href="/delete/<%= item.id %>" class="btn btn-outline-danger"><i class="fa-solid fa-trash"></i></a>                   
+                </td>
+            </tr>                                   
+         <% }) %>
+        </tbody>
+      </table>
+      </div>
+      <script src="https://kit.fontawesome.com/43ebf4cfc4.js" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>   
+</body>
+</html>
